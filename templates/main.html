@@ -5,6 +5,13 @@
   </head>
 
   <body>
+    <table>
+      {% for value in commands %}
+      <tr>
+        <th>{{value}}</th>
+      </tr>
+      {% endfor %}
+    </table>
     <form method="POST">
       <input name="text" />
       <input type="submit" />
