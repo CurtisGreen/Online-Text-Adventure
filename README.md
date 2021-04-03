@@ -4,7 +4,7 @@ Online text based adventure game made in Python/Flask
 
 ### Setup
 - `git clone <this repo>`
-- `py -3 -m venv venv` // Setup venv in current directory
+- `py -3 -m venv venv` // Setup venv in clone directory
 - `pip install Flask`
 
 ### Run
