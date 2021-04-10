@@ -1,20 +1,95 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Title</title>
+    <title>textAdventure</title>
+    <style>
+      .container {
+      display: flex;
+      flex-wrap: wrap;
+      }
+      .container .location {
+      flex: 1 0 40%;
+      height: 20vh;
+      border: 1px solid green;
+      background-image: url("https://i.pinimg.com/originals/cb/dd/18/cbdd1840ff63d5bb281f1261094f0c15.png");
+      }   
+      .container .map {
+      flex: 1 0 40%;
+      height: 20vh;
+      border: 1px solid green;
+      }
+      .container .viewport {
+      flex: 1 0 40%;
+      height: 40vh;
+      border: 1px solid green;
+      overflow: hidden;
+      }
+      .container .textbox {
+      flex: 1 0 40%;
+      height: 30vh;
+      }
+      .container .items {
+      flex: 1 0 40%;
+      height: 40vh;
+      border: 1px solid green;
+      }
+      .container .stats {
+      flex: 1 0 40%;
+      height: 35vh;
+      border: 1px solid green;
+      }
+      .container .input {
+      flex: 1;
+      height: 5vh;
+      width: 49.4vw;
+      border: 1px solid green;
+      }
+      .right-container {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      }
+      </style>
   </head>
 
-  <body>
-    <table>
-      {% for value in commands %}
-      <tr>
-        <th>{{value}}</th>
-      </tr>
-      {% endfor %}
-    </table>
-    <form method="POST">
-      <input name="text" />
-      <input type="submit" />
-    </form>
+  <body style="background-color: black;">
+    <div class="container">
+      
+      <div class="location">
+        <h1 style="color:whitesmoke; text-align:center;">Goblin Forest</h1>
+      </div>
+
+      <div class="map" style="background: red;">
+        <h1 style="color:whitesmoke; text-align:center;">Map</h1>
+      </div>
+
+      <div class="viewport">
+        <img src="https://i.pinimg.com/originals/ea/b7/e5/eab7e5d074f93c838e43553eab2a591d.jpg">
+      </div>
+
+      <div class="items">
+        <h1 style="color:whitesmoke; text-align:center;">Inventory</h1>
+      </div>
+      
+      <div class="right-container">
+        <table class="textbox"style="text-align:left; background: blue;">
+          {% for value in commands %}
+          <tr>
+            <th style="color: #39ff14;">{{value}}</th>
+          </tr>
+          {% endfor %}
+        </table>
+        <form method="POST" class="input">
+          <input name="text" style="width: 49vw; height: 4.3vh;"/>
+        </form>
+      </div>
+      
+
+      <div class="stats">
+        <h1 style="color:whitesmoke; text-align:center;">Stats</h1>
+      </div>
+
+
+    </div>
   </body>
 </html>
