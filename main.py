@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template, session
+from Parser import Parser
 
 app = Flask(__name__)
 app.secret_key = b';l235]-9i0;nkawef9u[0]'
@@ -15,7 +16,8 @@ def home():
 # Currently just capitalizes text and adds it to the stack
 def processCommand(command):
     if (command != None):
-        result = command.upper()
+        parser = Parser()
+        result = parser.parse(command)
         addCommand(result)
 
     commands = getCommands()
