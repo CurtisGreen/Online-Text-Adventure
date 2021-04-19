@@ -4,12 +4,15 @@ from Parser import Parser
 app = Flask(__name__)
 app.secret_key = b';l235]-9i0;nkawef9u[0]'
 
-@app.route('/', methods=['POST', 'GET'])
+@app.route('/command', methods=['POST'])
 def home():
     text = None
+    print('home()')
     # Get text from html form
-    if 'text' in request.form:
-        text = request.form['text']
+    jsonData = request.get_json()
+    if 'command' in jsonData:
+        text = jsonData['command']
+    print(text)
     return processCommand(text)
 
 # Actual logic would go here
@@ -21,7 +24,7 @@ def processCommand(command):
         addCommand(result)
 
     commands = getCommands()
-    return displayPage(commands)
+    return {'commands': commands}
 
 # Get command list out of session storage
 def getCommands():
@@ -42,6 +45,3 @@ def addCommand(command):
     
     commands.append(command)
     session['commands'] = commands
-
-def displayPage(commands = []):
-    return render_template('main.html', commands = commands)

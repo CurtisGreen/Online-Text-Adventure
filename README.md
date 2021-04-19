@@ -1,12 +1,22 @@
 # Online-Text-Adventure
 
-Online text based adventure game made in Python/Flask
+Online text based adventure game made in Python/Flask/React
 
 ### Setup
-- `git clone <this repo>`
-- `py -3 -m venv venv` // Setup venv in clone directory
-- `pip install Flask`
+```bash
+git clone <this repo>
+cd Online-Text-Adventure
+npm install
+cd api
+py -m venv venv
+venv/Scripts/activate
+pip install flask python-dotenv
+```
 
 ### Run
-- `export FLASK_APP=main.py` // Tell flask starting program
-- `py -m flask run`
+```bash
+cd Online-Text-Adventure
+npm run start // Start frontend
+// Open a separate terminal
+npm run api-start // Start backend
+```
