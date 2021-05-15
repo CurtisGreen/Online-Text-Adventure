@@ -8,7 +8,7 @@ git clone <this repo>
 cd Online-Text-Adventure
 npm install
 cd api
-py -m venv venv
+python -m venv venv # Might need pip install virtualenv
 venv/Scripts/activate
 pip install flask python-dotenv
 ```
@@ -16,7 +16,7 @@ pip install flask python-dotenv
 ### Run
 ```bash
 cd Online-Text-Adventure
-npm run start // Start frontend
-// Open a separate terminal
-npm run api-start // Start backend
+npm run start # Start frontend
+# Open a separate terminal
+npm run api-start # Start backend
 ```
